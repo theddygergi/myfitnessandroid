@@ -6,28 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".PlanActivity">
 
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:menu="@menu/home_menu" />
+
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        >
+        android:layout_height="wrap_content">
+
         <TextView
-            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Our plans"
             android:layout_marginStart="20dp"
             android:fontFamily="@font/poppins"
             android:textStyle="bold"
-            android:textSize="40dp"
-            tools:ignore="MissingConstraints" />
-
+            android:textSize="40sp"
+            tools:ignore="HardcodedText,MissingConstraints" />
 
         <ImageView
             android:layout_marginTop="120dp"
@@ -36,10 +34,10 @@
             android:src="@drawable/workout_plan"/>
 
         <Button
-            android:id="@+id/moreWorkout"
+            android:id="@+id/workoutLearnMore"
             android:layout_width="123dp"
             android:layout_height="48dp"
-            android:layout_marginLeft="250dp"
+            android:layout_marginStart="250dp"
             android:layout_marginTop="230dp"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/poppins"
@@ -54,7 +52,7 @@
             android:src="@drawable/meal_plan"/>
 
         <Button
-            android:id="@+id/learnMoreMeal"
+            android:id="@+id/mealLearnMore"
             android:layout_width="123dp"
             android:layout_height="48dp"
             android:layout_marginLeft="250dp"
@@ -66,12 +64,4 @@
             android:textSize="12sp" />
 
     </FrameLayout>
-
-
-
-
-
-
-
 </FrameLayout>
-

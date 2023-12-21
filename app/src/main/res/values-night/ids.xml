@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <item name="learnMoreWorkout" type="id" />
+    <item name="progressBarMain" type="id" />
+    <item name="goalRadioButton" type="id" />
+    <item name="workoutLearnMore" type="id" />
+    <item name="mealLearnMore" type="id" />
 </resources>

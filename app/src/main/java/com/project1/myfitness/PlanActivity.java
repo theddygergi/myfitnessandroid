@@ -16,14 +16,13 @@ public class PlanActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Button learnMoreWorkout, learnMoreMeal;
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
         bottomNavigationView = findViewById(R.id.bottomNavView);
         bottomNavigationView.setSelectedItemId(R.id.planButton);
-        learnMoreWorkout = findViewById(R.id.wor);
+        learnMoreMeal = findViewById(R.id.mealLearnMore);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
