@@ -3,6 +3,7 @@ package com.project1.myfitness;
 import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -36,6 +37,8 @@ public class SignUpActivity extends AppCompatActivity {
     Button back, next;
     RadioGroup radioGroup;
     RadioButton r1, r2,r3;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     int goalId = 0;
 
     @SuppressLint("MissingInflatedId")
@@ -55,8 +58,10 @@ public class SignUpActivity extends AppCompatActivity {
         r3 = findViewById(R.id.goal3);
         back = findViewById(R.id.backButton);
         next = findViewById(R.id.nextButton);
+        sharedPreferences = getSharedPreferences("LoginPageActivity",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
-        back.setOnClickListener(new View.OnClickListener() {
+                back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(SignUpActivity.this, MainLogin.class);
@@ -84,10 +89,15 @@ public class SignUpActivity extends AppCompatActivity {
                 if(name.isEmpty() || email.isEmpty() || password.isEmpty())
                     Toast.makeText(SignUpActivity.this,"Field(s) are empty",Toast.LENGTH_SHORT).show();
                 //submitToDB(name,email,password,gender,height,weight,BMI,goalId);
+
                 DatabaseHelper db = new DatabaseHelper(SignUpActivity.this);
                 Boolean b = db.addUser(name,email,password,gender,height,weight,BMI,goalId);
                 int userID = db.getUserID(email);
                 Boolean setDef = db.setDefaultProgress(userID);
+                editor.putString("gender",gender);
+                editor.putInt("progress",0);
+                editor.putInt("goalID",goalId);
+                editor.apply();
                 Toast.makeText(SignUpActivity.this,"Successfully signed up",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(SignUpActivity.this, LoginPageActivity.class));
             }

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ArmsActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/home_menu" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:textSize="35dp"
+        android:layout_marginStart="20dp"
+        android:text="Arms Workout"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Do these exercises to train your arms!"
+        android:textStyle="normal"
+        />
+
+    <ImageView
+        android:id="@+id/arms1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="200dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/knee_push_ups"/>
+
+    <TextView
+        android:id="@+id/armsT1"
+        android:textSize="15dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="220dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Knee push ups\n 3 reps 5 sets"/>
+
+    <CheckBox
+        android:id="@+id/armsEx1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        android:layout_marginStart="330dp"/>
+
+    <ImageView
+        android:id="@+id/arms2"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="350dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/knee_push_ups"/>
+
+    <TextView
+        android:id="@+id/armsT2"
+        android:textSize="15dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="370dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Knee push ups\n 3 reps 5 sets"/>
+
+    <CheckBox
+        android:id="@+id/armsEx2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:layout_marginStart="330dp"/>
+
+    <ImageView
+        android:id="@+id/arms3"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="500dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/knee_push_ups"/>
+
+    <TextView
+        android:id="@+id/armsT3"
+        android:textSize="15dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="520dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Knee push ups\n 3 reps 5 sets"/>
+
+    <CheckBox
+        android:id="@+id/armsEx3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:layout_marginStart="330dp"/>
+
+
+</FrameLayout>

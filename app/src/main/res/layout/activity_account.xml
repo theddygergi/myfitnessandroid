@@ -65,20 +65,20 @@
             android:textStyle="bold"
             android:fontFamily="@font/poppins"/>
 
-        <Button
+        <!--<Button
             android:id="@+id/getRemindersButton"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="150dp"
             android:backgroundTint="@color/black"
-            android:text="Get Reminders"/>
+            android:text="Get Reminders"/> -->
         <Button
             android:id="@+id/loginSignUpButton"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="200dp"
             android:backgroundTint="@color/light_green"
             android:text="LOG IN / SIGN UP"/>
         <Button

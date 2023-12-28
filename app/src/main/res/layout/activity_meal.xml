@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MealActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/home_menu" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Meal Plan"
+        android:fontFamily="@font/poppins"
+        android:textSize="45dp"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="50dp"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:fontFamily="@font/poppins"
+        android:text="You can find below your meal plan for the day"/>
+
+    <TextView
+        android:layout_marginStart="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Breakfast"
+        android:textSize="20dp"
+        android:layout_marginTop="180dp"
+        android:fontFamily="@font/poppins"/>
+    <TextView
+        android:id="@+id/breakfastFood"
+        android:layout_marginTop="210dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_green"
+        android:text="Double Apple Baked Oatmeal\n
+        237 calories"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins"
+        android:padding="20dp" />
+    <TextView
+        android:layout_marginStart="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lunch"
+        android:textSize="20dp"
+        android:layout_marginTop="330dp"
+        android:fontFamily="@font/poppins"/>
+    <TextView
+        android:id="@+id/lunchFood"
+        android:layout_marginTop="360dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_green"
+        android:text="Double Apple Baked Oatmeal\n
+        237 calories"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins"
+        android:padding="20dp" />
+    <TextView
+        android:layout_marginStart="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dinner"
+        android:textSize="20dp"
+        android:layout_marginTop="480dp"
+        android:fontFamily="@font/poppins"/>
+    <TextView
+        android:id="@+id/dinnerFood"
+        android:layout_marginTop="510dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_green"
+        android:text="Double Apple Baked Oatmeal\n
+        237 calories"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:fontFamily="@font/poppins"
+        android:padding="20dp" />
+
+
+</FrameLayout>

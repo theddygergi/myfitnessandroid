@@ -33,6 +33,9 @@ public class StepsCounter extends AppCompatActivity implements SensorEventListen
     float stepLength = 0.726f; //in meters
     int stepCountTargett = 5000;
 
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
+
     Handler timeHandler = new Handler();
     Runnable timeRunnable = new Runnable() {
         @Override
@@ -81,6 +84,8 @@ public class StepsCounter extends AppCompatActivity implements SensorEventListen
         stepCountSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
         progressBar.setMax(stepCountTargett);
         stepCountTarget.setText("Step goal: " + stepCountTargett);
+        sharedPreferences = getSharedPreferences("LoginPageActivity",MODE_PRIVATE);
+
 
         if(stepCountSensor == null){
             stepCountTarget.setText("Step counter not available");
@@ -109,9 +114,12 @@ public class StepsCounter extends AppCompatActivity implements SensorEventListen
     @Override
     public void onSensorChanged(SensorEvent event) {
         if(event.sensor.getType() == Sensor.TYPE_STEP_COUNTER){
+            DatabaseHelper db = new DatabaseHelper(StepsCounter.this);
             stepCount = (int) event.values[0];
             stepsCounter.setText("Step count: " + stepCount);
             progressBar.setProgress(stepCount);
+            if(sharedPreferences.getString("isLoggedIn","").equals("true"))
+                db.updateSteps(stepCount,sharedPreferences.getInt("userID",0));
         }
 
         if(stepCount >= stepCountTargett){

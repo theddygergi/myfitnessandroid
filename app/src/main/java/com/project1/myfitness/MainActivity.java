@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.Image;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,12 +37,10 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
 
     ImageView  walking, workout;
-    ProgressBar progressBar;
-    TextView nameWelcomeText, welcomeText;
+    TextView nameWelcomeText, welcomeText, progressText;
     BottomNavigationView bottomNavigationView;
-
-    String name = null;
-    String mail;
+    ProgressBar progressBar;
+    int userID;
     @SuppressLint({"MissingInflatedId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +49,17 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavView);
 
         SharedPreferences sharedPreferences = getSharedPreferences("LoginPageActivity",MODE_PRIVATE);
-        @SuppressLint("CommitPrefEdits") SharedPreferences.Editor editor = sharedPreferences.edit();
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
         walking = findViewById(R.id.walkingIcon);
         workout = findViewById(R.id.workoutIcon);
         nameWelcomeText = findViewById(R.id.nameWelcomeText);
         progressBar = findViewById(R.id.mainProgressBar);
         welcomeText = findViewById(R.id.welcomeText);
+        progressText = findViewById(R.id.progressText);
         bottomNavigationView.setSelectedItemId(R.id.homeButton);
+
+
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -113,5 +115,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        userID = sharedPreferences.getInt("userID",0);
+        DatabaseHelper db = new DatabaseHelper(MainActivity.this);
+        int progress = (int) db.getProgress(userID);
+        progressText.setText("You have achieved " + progress + "% of your workout!");
+        progressBar.setProgress(progress);
+        if (progress > 100) {
+            progressBar.setVisibility(View.GONE);
+            progressText.setTextSize(20);
+            progressText.setText("Congrats, you have achieved your goal!");
+        }
     }
 }

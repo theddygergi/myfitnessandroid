@@ -59,12 +59,14 @@ public class ClassesActivity extends AppCompatActivity {
             }
         });
 
+        DatabaseHelper db = new DatabaseHelper(ClassesActivity.this);
+
         joinZumba.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ClassesActivity.this)
                         .setTitle("Welcome to the zumba class")
-                        .setMessage("Bla bla bla")
+                        .setMessage(db.getClassDescription(2))
                         .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -92,7 +94,7 @@ public class ClassesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ClassesActivity.this)
                         .setTitle("Welcome to the yoga class")
-                        .setMessage("Bla bla bla")
+                        .setMessage(db.getClassDescription(1))
                         .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -120,7 +122,7 @@ public class ClassesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ClassesActivity.this)
                         .setTitle("Welcome to the steps class")
-                        .setMessage("Bla bla bla")
+                        .setMessage(db.getClassDescription(3))
                         .setNeutralButton("Ok", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {

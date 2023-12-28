@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChestActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/home_menu" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:textSize="35dp"
+        android:layout_marginStart="20dp"
+        android:text="Chest Workout"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:layout_marginTop="100dp"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Do these exercises to train your chest!"
+        android:textStyle="normal"
+        />
+
+    <ImageView
+        android:id="@+id/chestI1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="200dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/knee_push_ups"/>
+
+    <TextView
+        android:id="@+id/chestW1"
+        android:textSize="15dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="220dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Knee push ups\n 3 reps 5 sets"/>
+
+
+    <CheckBox
+        android:id="@+id/chestEx1"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="280dp"
+        android:layout_marginTop="220dp"
+        android:backgroundTint="@color/light_grey"/>
+
+    <ImageView
+        android:id="@+id/chestI2"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="350dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/knee_push_ups"/>
+
+    <TextView
+        android:id="@+id/chestW2"
+        android:textSize="15dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="370dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Knee push ups\n 3 reps 5 sets"/>
+
+    <CheckBox
+        android:id="@+id/chestEx2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="380dp"
+        android:layout_marginStart="280dp"
+        android:backgroundTint="@color/light_grey" />
+
+    <ImageView
+        android:id="@+id/chestI3"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="500dp"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/knee_push_ups"/>
+
+    <TextView
+        android:id="@+id/chestW3"
+        android:textSize="15dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="520dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Knee push ups\n 3 reps 5 sets"/>
+
+    <CheckBox
+        android:id="@+id/chestEx3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="520dp"
+        android:layout_marginStart="280dp"
+        android:backgroundTint="@color/light_grey" />
+
+
+</FrameLayout>

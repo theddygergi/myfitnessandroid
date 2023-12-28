@@ -129,17 +129,26 @@
             android:textSize="20sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/progressText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins"
+            android:text="Hello"
+            android:gravity="center" />
+
         <ProgressBar
             android:id="@+id/mainProgressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="116dp"
+            android:layout_width="200dp"
             android:layout_height="94dp"
             android:layout_gravity="center"
-            android:background="@drawable/circular"
-            android:progressDrawable="@drawable/custom_progress"
             tools:ignore="MissingConstraints"
             tools:layout_editor_absoluteX="138dp"
-            tools:layout_editor_absoluteY="523dp" />
+            tools:layout_editor_absoluteY="523dp"
+            android:progress="0"
+            android:visibility="visible"
+            android:max="100"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

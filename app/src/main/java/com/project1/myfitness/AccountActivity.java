@@ -112,6 +112,9 @@ public class AccountActivity extends AppCompatActivity  {
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(sharedPreferences.getString("isLoggedIn","").equals("false")){
+                    Toast.makeText(AccountActivity.this, "You're already logged out!", Toast.LENGTH_SHORT).show();
+                }
                 editor.putString("isLoggedIn", "false");
                 editor.commit();
                 Toast.makeText(AccountActivity.this,"Logout Success", Toast.LENGTH_SHORT).show();

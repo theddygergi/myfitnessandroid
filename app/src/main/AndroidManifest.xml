@@ -11,13 +11,34 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo_app"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@drawable/logo_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyFitness"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".LegsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AbsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ArmsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MealActivity"
+            android:exported="false" />
+        <activity
+            android:name=".WorkoutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlanActivity"
+            android:exported="false" />
         <activity
             android:name=".RemindersActivity"
             android:exported="false" />
@@ -46,11 +67,9 @@
             android:name=".AccountActivity"
             android:exported="false" />
         <activity
-            android:name=".PlanActivity"
-            android:exported="false" />
-        <activity
             android:name=".ClassesActivity"
             android:exported="false" />
+
         <receiver android:name=".RemindersActivity" />
     </application>
 

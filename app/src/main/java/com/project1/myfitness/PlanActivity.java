@@ -3,26 +3,32 @@ package com.project1.myfitness;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class PlanActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
-    Button learnMoreWorkout, learnMoreMeal;
-
+    Button joinWorkout, joinMeal;
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan);
         bottomNavigationView = findViewById(R.id.bottomNavView);
         bottomNavigationView.setSelectedItemId(R.id.planButton);
-        learnMoreMeal = findViewById(R.id.mealLearnMore);
+        joinWorkout = findViewById(R.id.joinWorkout);
+        joinMeal = findViewById(R.id.joinMeal);
+        sharedPreferences = getSharedPreferences("LoginPageActivity", MODE_PRIVATE);
+        editor = sharedPreferences.edit();
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -31,6 +37,7 @@ public class PlanActivity extends AppCompatActivity {
                 if(itemID == R.id.homeButton){
                     startActivity(new Intent(getApplicationContext(),MainActivity.class));
                     overridePendingTransition(0,0);
+                    return true;
                 }
                 else if(itemID == R.id.classesButton){
                     startActivity(new Intent(getApplicationContext(),ClassesActivity.class));
@@ -46,6 +53,27 @@ public class PlanActivity extends AppCompatActivity {
                     return true;
                 }
                 return false;
+            }
+        });
+
+        joinWorkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(sharedPreferences.getString("isLoggedIn","").equals("true"))
+                    startActivity(new Intent(PlanActivity.this,WorkoutActivity.class));
+                else
+                    Toast.makeText(PlanActivity.this,"You must log in!",Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        joinMeal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(sharedPreferences.getString("isLoggedIn","").equals("true"))
+                    startActivity(new Intent(PlanActivity.this, MealActivity.class));
+                else
+                    Toast.makeText(PlanActivity.this,"You must log in!",Toast.LENGTH_SHORT).show();
+
             }
         });
 

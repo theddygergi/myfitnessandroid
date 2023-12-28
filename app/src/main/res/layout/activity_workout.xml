@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WorkoutActivity">
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:menu="@menu/home_menu" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Workout Plan"
+        android:fontFamily="@font/poppins"
+        android:textSize="45dp"
+        android:layout_marginStart="20dp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="297dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="50dp"
+        android:gravity="center"
+        android:textSize="18dp"
+        android:fontFamily="@font/poppins"
+        android:text="You can find below your workout plan according to your goal"/>
+
+    <ImageView
+        android:id="@+id/chestWorkout"
+        android:layout_width="179dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/chest_workout"/>
+    <ImageView
+        android:id="@+id/armsWorkout"
+        android:layout_width="179dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginStart="220dp"
+        android:src="@drawable/arms_workout"/>
+    <ImageView
+        android:id="@+id/absWorkout"
+        android:layout_width="179dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/abs_workout"/>
+    <ImageView
+        android:id="@+id/legsWorkout"
+        android:layout_width="179dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginStart="220dp"
+        android:src="@drawable/legs_workout"/>
+
+</FrameLayout>
